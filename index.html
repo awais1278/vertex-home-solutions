@@ -7,7 +7,7 @@
 <meta name="description" content="Vertex Home Solutions connects roofing, cleaning, and HVAC contractors with verified, ready-to-buy homeowners across the US.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/lucide@0.363.0/dist/umd/lucide.min.js"></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,19 +25,22 @@
   --border: #e2e8f0;
   --border2: #cbd5e1;
   --text: #0f2137;
-  --muted: #64748b;
-  --dim: #94a3b8;
+  --muted: #475569;
+  --dim: #64748b;
   --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.04);
   --shadow-lg: 0 4px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.06);
 }
 
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.65;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
 }
 
 /* ─── NAV ─── */
@@ -50,23 +53,30 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
 }
 .logo {
-  font-family: 'Playfair Display', serif;
+  font-family: 'DM Serif Display', serif;
   font-weight: 700; font-size: 20px;
   color: var(--navy); text-decoration: none; letter-spacing: -0.3px;
 }
 .logo span { color: var(--green); }
 .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
-.nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 400; transition: color .2s; }
-.nav-links a:hover { color: var(--navy); }
+.nav-links a:not(.nav-cta) { color: #1e293b; text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; cursor: pointer; }
+.nav-links a:not(.nav-cta):hover { color: var(--green); }
+
 .nav-cta {
   background: var(--navy); color: #fff;
-  padding: 10px 22px; border-radius: 8px;
-  font-size: 14px; font-weight: 500;
-  font-family: 'Outfit', sans-serif;
+  padding: 14px 30px; border-radius: 8px;
+  font-size: 15px; font-weight: 500;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   border: none; cursor: pointer; text-decoration: none;
-  display: inline-block; transition: background .2s;
+  display: inline-block;
+  transition: background .2s, transform .15s, box-shadow .2s;
 }
-.nav-cta:hover { background: var(--navy2); }
+.nav-cta:hover {
+  background: var(--navy2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(15,33,55,0.25);
+}
+.nav-cta:active { transform: translateY(0); box-shadow: none; }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
 .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 2px; }
 
@@ -89,27 +99,33 @@ nav {
 }
 .hero-eyebrow::before { content: ''; width: 7px; height: 7px; background: var(--green); border-radius: 50%; }
 .hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 58px; font-weight: 800;
+  font-family: 'DM Serif Display', serif;
+  font-size: 62px; font-weight: 400;
   line-height: 1.06; color: var(--navy);
   margin-bottom: 22px; letter-spacing: -1.5px;
 }
 .hero h1 em { color: var(--green); font-style: italic; }
-.hero p { font-size: 17px; color: var(--muted); line-height: 1.8; margin-bottom: 38px; max-width: 460px; font-weight: 300; }
+.hero p { font-size: 17px; color: var(--muted); line-height: 1.8; margin-bottom: 38px; max-width: 460px; font-weight: 500; }
 .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
 .btn-primary {
   background: var(--navy); color: #fff;
   padding: 14px 30px; border-radius: 8px;
   font-size: 15px; font-weight: 500;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   border: none; cursor: pointer; text-decoration: none;
-  display: inline-block; transition: background .2s;
+  display: inline-block;
+  transition: background .2s, transform .15s, box-shadow .2s;
 }
-.btn-primary:hover { background: var(--navy2); }
+.btn-primary:hover {
+  background: var(--navy2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(15,33,55,0.25);
+}
+.btn-primary:active { transform: translateY(0); box-shadow: none; }
 .btn-outline {
   background: transparent; color: var(--navy);
   padding: 14px 30px; border-radius: 8px;
-  font-size: 15px; font-family: 'Outfit', sans-serif;
+  font-size: 15px; font-family: 'Plus Jakarta Sans', sans-serif;
   border: 1.5px solid var(--border2); cursor: pointer;
   text-decoration: none; display: inline-block; transition: border-color .2s;
 }
@@ -169,7 +185,7 @@ nav {
   display: grid; grid-template-columns: repeat(3,1fr);
   text-align: center;
 }
-.hcf-num { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--navy); }
+.hcf-num { font-family: 'DM Serif Display', serif; font-size: 22px; font-weight: 700; color: var(--navy); }
 .hcf-label { font-size: 11px; color: var(--dim); margin-top: 1px; }
 
 /* ─── STATS ─── */
@@ -183,12 +199,12 @@ nav {
 }
 .stat-item:last-child { border-right: none; }
 .stat-num {
-  font-family: 'Playfair Display', serif;
+  font-family: 'DM Serif Display', serif;
   font-size: 40px; font-weight: 700;
   color: #fff; margin-bottom: 4px; line-height: 1;
 }
 .stat-num span { color: var(--green); }
-.stat-label { font-size: 13px; color: rgba(255,255,255,0.45); font-weight: 300; }
+.stat-label { font-size: 13px; color: rgba(255,255,255,0.65); font-weight: 500; }
 
 /* ─── SECTIONS ─── */
 .section { max-width: 1120px; margin: 0 auto; padding: 90px 56px; }
@@ -197,11 +213,11 @@ nav {
   text-transform: uppercase; font-weight: 600; margin-bottom: 10px;
 }
 .section-heading {
-  font-family: 'Playfair Display', serif;
-  font-size: 40px; font-weight: 700;
-  color: var(--navy); margin-bottom: 12px; letter-spacing: -0.8px; line-height: 1.15;
+  font-family: 'DM Serif Display', serif;
+  font-size: 44px; font-weight: 400;
+  color: var(--navy); margin-bottom: 12px; letter-spacing: -0.5px; line-height: 1.15;
 }
-.section-sub { font-size: 16px; color: var(--muted); max-width: 500px; line-height: 1.75; margin-bottom: 52px; font-weight: 300; }
+.section-sub { font-size: 16px; color: var(--muted); max-width: 500px; line-height: 1.75; margin-bottom: 52px; font-weight: 500; }
 
 /* ─── SERVICES ─── */
 .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
@@ -221,9 +237,9 @@ nav {
 .ind-icon svg { width: 18px; height: 18px; stroke: rgba(255,255,255,0.7); stroke-width: 1.8; fill: none; }
 .guarantee-icon { flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; }
 .guarantee-icon svg { width: 26px; height: 26px; stroke: var(--green); stroke-width: 1.8; fill: none; }
-.svc-name { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
-.svc-desc { font-size: 14px; color: var(--muted); line-height: 1.7; font-weight: 300; }
-.svc-price { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 12px; color: var(--green); font-weight: 500; }
+.svc-name { font-family: 'DM Serif Display', serif; font-size: 18px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+.svc-desc { font-size: 14px; color: var(--muted); line-height: 1.7; font-weight: 500; }
+.svc-price { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 13px; color: var(--green); font-weight: 600; }
 
 /* ─── WHY US ─── */
 .why-bg { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -231,7 +247,7 @@ nav {
 .why-list { display: flex; flex-direction: column; gap: 28px; }
 .why-item { display: flex; gap: 18px; align-items: flex-start; }
 .why-title { font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
-.why-desc { font-size: 14px; color: var(--muted); line-height: 1.65; font-weight: 300; }
+.why-desc { font-size: 14px; color: var(--muted); line-height: 1.65; font-weight: 500; }
 .why-visual {
   background: var(--white);
   border: 1px solid var(--border);
@@ -247,7 +263,7 @@ nav {
 .wv-divider { height: 1px; background: var(--border); margin: 20px 0; }
 .wv-bottom { display: flex; justify-content: space-between; }
 .wv-stat { text-align: center; }
-.wv-stat-num { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--navy); }
+.wv-stat-num { font-family: 'DM Serif Display', serif; font-size: 26px; font-weight: 700; color: var(--navy); }
 .wv-stat-label { font-size: 11px; color: var(--dim); }
 
 /* ─── HOW IT WORKS ─── */
@@ -261,12 +277,12 @@ nav {
 }
 .step-card:hover { box-shadow: var(--shadow-lg); }
 .step-number {
-  font-family: 'Playfair Display', serif;
+  font-family: 'DM Serif Display', serif;
   font-size: 52px; font-weight: 700;
   color: var(--green-mid); line-height: 1; margin-bottom: 14px;
 }
 .step-title { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
-.step-desc { font-size: 13px; color: var(--muted); line-height: 1.65; font-weight: 300; }
+.step-desc { font-size: 14px; color: var(--muted); line-height: 1.65; font-weight: 500; }
 .step-connector {
   position: absolute; top: 36px; right: -14px;
   width: 28px; height: 1px; background: var(--border2);
@@ -291,7 +307,7 @@ nav {
 .ind-card:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.16); }
 .ind-emoji { font-size: 24px; flex-shrink: 0; }
 .ind-name { font-size: 15px; font-weight: 500; color: #fff; margin-bottom: 2px; }
-.ind-rate { font-size: 12px; color: rgba(255,255,255,0.4); }
+.ind-rate { font-size: 12px; color: rgba(255,255,255,0.6); font-weight: 500; }
 
 /* ─── PRICING ─── */
 .pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; align-items: start; }
@@ -311,21 +327,21 @@ nav {
 }
 .plan-tier { font-size: 11px; font-weight: 600; letter-spacing: 2px; color: var(--dim); text-transform: uppercase; margin-bottom: 10px; }
 .plan-price {
-  font-family: 'Playfair Display', serif;
-  font-size: 48px; font-weight: 700;
+  font-family: 'DM Serif Display', serif;
+  font-size: 52px; font-weight: 400;
   color: var(--navy); line-height: 1; margin-bottom: 4px;
 }
 .plan-price sup { font-size: 24px; vertical-align: top; margin-top: 10px; display: inline-block; }
-.plan-price sub { font-size: 15px; font-weight: 400; font-family: 'Outfit', sans-serif; color: var(--muted); }
-.plan-tagline { font-size: 13px; color: var(--muted); margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px solid var(--border); line-height: 1.6; font-weight: 300; }
+.plan-price sub { font-size: 15px; font-weight: 400; font-family: 'Plus Jakarta Sans', sans-serif; color: var(--muted); }
+.plan-tagline { font-size: 14px; color: var(--muted); margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px solid var(--border); line-height: 1.6; font-weight: 500; }
 .plan-features { list-style: none; margin-bottom: 26px; display: flex; flex-direction: column; gap: 12px; }
-.plan-features li { font-size: 14px; color: var(--muted); display: flex; gap: 10px; align-items: flex-start; font-weight: 300; }
+.plan-features li { font-size: 14px; color: var(--muted); display: flex; gap: 10px; align-items: flex-start; font-weight: 500; }
 .plan-features li .ck { color: var(--green); font-weight: 600; flex-shrink: 0; }
 .plan-features li.off { color: var(--dim); }
 .plan-features li.off .ck { color: var(--dim); }
 .plan-btn {
   width: 100%; padding: 13px; border-radius: 8px;
-  font-size: 14px; font-family: 'Outfit', sans-serif;
+  font-size: 14px; font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 500; cursor: pointer; border: none; transition: all .2s;
 }
 .plan-btn.dark { background: var(--navy); color: #fff; }
@@ -338,7 +354,7 @@ nav {
   border-radius: 12px; display: flex; gap: 14px; align-items: flex-start;
 }
 .guarantee h4 { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 3px; }
-.guarantee p { font-size: 13px; color: var(--muted); line-height: 1.55; font-weight: 300; }
+.guarantee p { font-size: 14px; color: var(--muted); line-height: 1.55; font-weight: 500; }
 
 /* ─── FAQ ─── */
 .faq-bg { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -362,7 +378,7 @@ nav {
 .faq-a {
   max-height: 0; overflow: hidden;
   font-size: 14px; color: var(--muted); line-height: 1.75;
-  padding: 0 22px; font-weight: 300;
+  padding: 0 22px; font-weight: 500;
   transition: max-height .3s ease, padding .3s ease;
 }
 .faq-a.open { max-height: 200px; padding: 0 22px 18px; }
@@ -377,7 +393,7 @@ nav {
 }
 .testi-card:hover { box-shadow: var(--shadow-lg); }
 .testi-stars { color: #f59e0b; font-size: 14px; letter-spacing: 2px; margin-bottom: 14px; }
-.testi-text { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 20px; font-style: italic; font-weight: 300; }
+.testi-text { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 20px; font-style: italic; font-weight: 500; }
 .testi-author { display: flex; align-items: center; gap: 12px; }
 .testi-avatar {
   width: 40px; height: 40px; border-radius: 50%;
@@ -385,7 +401,7 @@ nav {
   display: flex; align-items: center; justify-content: center;
   font-size: 13px; font-weight: 600; color: var(--green); flex-shrink: 0;
 }
-.testi-name { font-size: 14px; font-weight: 600; color: var(--navy); }
+.testi-name { font-size: 14px; font-weight: 700; color: var(--navy); }
 .testi-biz { font-size: 12px; color: var(--dim); }
 
 /* ─── CONTACT ─── */
@@ -398,9 +414,9 @@ nav {
   display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start;
 }
 .contact-left .section-heading { font-size: 36px; }
-.contact-left p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 28px; font-weight: 300; }
+.contact-left p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 28px; font-weight: 500; }
 .contact-checks { display: flex; flex-direction: column; gap: 13px; margin-bottom: 32px; }
-.contact-check { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); font-weight: 300; }
+.contact-check { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); font-weight: 400; }
 .check-icon { width: 22px; height: 22px; border-radius: 50%; background: var(--green-light); display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--green); font-weight: 700; flex-shrink: 0; }
 .contact-email { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); padding: 12px 16px; background: var(--white); border: 1px solid var(--border); border-radius: 8px; }
 .contact-email span { color: var(--navy); font-weight: 500; }
@@ -420,7 +436,7 @@ nav {
   border: 1.5px solid var(--border);
   border-radius: 8px;
   font-size: 14px;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   color: var(--navy);
   background: var(--bg);
   outline: none;
@@ -443,7 +459,7 @@ nav {
   background: var(--navy); color: #fff;
   border: none; border-radius: 8px;
   font-size: 15px; font-weight: 500;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   cursor: pointer; transition: background .2s;
   margin-top: 4px;
 }
@@ -452,7 +468,7 @@ nav {
 .form-note { font-size: 12px; color: var(--dim); text-align: center; margin-top: 10px; }
 .success-box { text-align: center; padding: 32px 20px; }
 .success-icon { margin-bottom: 16px; display: flex; justify-content: center; }
-.success-box h3 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--navy); margin-bottom: 10px; }
+.success-box h3 { font-family: 'DM Serif Display', serif; font-size: 24px; color: var(--navy); margin-bottom: 10px; }
 .success-box p { font-size: 14px; color: var(--muted); line-height: 1.7; }
 
 /* ─── FOOTER ─── */
@@ -467,15 +483,15 @@ footer {
   margin-bottom: 28px;
 }
 .footer-logo {
-  font-family: 'Playfair Display', serif;
+  font-family: 'DM Serif Display', serif;
   font-weight: 700; font-size: 20px; color: #fff;
   text-decoration: none; display: block; margin-bottom: 12px;
 }
 .footer-logo span { color: var(--green); }
-.footer-about { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.7; font-weight: 300; max-width: 260px; }
+.footer-about { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.7; font-weight: 500; max-width: 260px; }
 .footer-col-title { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.6); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
 .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.footer-links a { font-size: 13px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color .2s; font-weight: 300; }
+.footer-links a { font-size: 13px; color: rgba(255,255,255,0.55); text-decoration: none; transition: color .2s; font-weight: 500; }
 .footer-links a:hover { color: rgba(255,255,255,0.7); }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
 .footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); }
@@ -543,12 +559,12 @@ footer {
 }
 .modal-close:hover { background: var(--border2); }
 .modal-tag { font-size: 11px; letter-spacing: 2px; color: var(--green); text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
-.modal-title { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+.modal-title { font-family: 'DM Serif Display', serif; font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
 .modal-date { font-size: 12px; color: var(--dim); margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
-.modal-body h3 { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 600; color: var(--navy); margin: 24px 0 8px; }
-.modal-body p { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 10px; font-weight: 300; }
+.modal-body h3 { font-family: 'DM Serif Display', serif; font-size: 17px; font-weight: 600; color: var(--navy); margin: 24px 0 8px; }
+.modal-body p { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 10px; font-weight: 500; }
 .modal-body ul { padding-left: 18px; margin-bottom: 10px; }
-.modal-body ul li { font-size: 14px; color: var(--muted); line-height: 1.8; font-weight: 300; margin-bottom: 4px; }
+.modal-body ul li { font-size: 14px; color: var(--muted); line-height: 1.8; font-weight: 500; margin-bottom: 4px; }
 </style>
 </head>
 <body>
@@ -561,7 +577,7 @@ footer {
     <li><a href="#how">How It Works</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#results">Results</a></li>
-    <li><a href="#contact" class="nav-cta">Get Free Leads →</a></li>
+    <li><a href="#contact" class="nav-cta">Get Free Leads</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -572,9 +588,9 @@ footer {
 <div class="hero-wrap">
   <div class="hero">
     <div>
-      <div class="hero-eyebrow">Lead Generation for US Home Services</div>
+      <div class="hero-eyebrow">Lead Generation for US Home Service Contractors</div>
       <h1>We Bring You <em>Clients.</em><br>You Do The Work.</h1>
-      <p>Vertex Home Solutions connects roofing, cleaning, and HVAC contractors with verified, ready-to-buy homeowners — so you can focus on the job, not the hustle.</p>
+      <p>We find homeowners who need your service, verify them, and send them straight to you. You focus on the work — we handle the pipeline.</p>
       <div class="hero-btns">
         <a href="#contact" class="btn-primary">Start Getting Leads →</a>
         <a href="#how" class="btn-outline">See How It Works</a>
@@ -585,44 +601,44 @@ footer {
           <div class="hero-trust-dot"><i data-lucide="home" style="width:13px;height:13px;stroke:var(--green);fill:none;stroke-width:1.8"></i></div>
           <div class="hero-trust-dot"><i data-lucide="star" style="width:13px;height:13px;stroke:var(--green);fill:none;stroke-width:1.8"></i></div>
         </div>
-        Trusted by contractors across 15+ US states
+        Serving contractors across 8+ US states
       </div>
     </div>
     <div class="hero-card">
       <div class="hcard-header">
         <span class="hcard-title">Live leads this week</span>
-        <span class="hcard-badge">● Live</span>
+        <span class="hcard-badge">● Active</span>
       </div>
       <div class="hcard-body">
         <div class="lead-row">
           <div class="lead-dot g"></div>
           <div class="lead-info">
-            <div class="lead-name">James R. — Dallas, TX</div>
-            <div class="lead-meta">Roofing · Full replacement · Budget $12k</div>
+            <div class="lead-name">James Harmon — Dallas, TX</div>
+            <div class="lead-meta">Roofing · Storm damage replacement · $10–15k budget</div>
           </div>
           <span class="lead-tag verified">Verified</span>
         </div>
         <div class="lead-row">
           <div class="lead-dot a"></div>
           <div class="lead-info">
-            <div class="lead-name">Maria S. — Phoenix, AZ</div>
-            <div class="lead-meta">Cleaning · Weekly service · 4-bed home</div>
+            <div class="lead-name">Maria Castillo — Phoenix, AZ</div>
+            <div class="lead-meta">Cleaning · Recurring weekly · 4-bed 2,400 sqft</div>
           </div>
           <span class="lead-tag new">New</span>
         </div>
         <div class="lead-row">
           <div class="lead-dot b"></div>
           <div class="lead-info">
-            <div class="lead-name">Tom W. — Houston, TX</div>
-            <div class="lead-meta">HVAC · AC replacement · Urgent</div>
+            <div class="lead-name">Thomas Ward — Houston, TX</div>
+            <div class="lead-meta">HVAC · Full AC replacement · Urgent request</div>
           </div>
           <span class="lead-tag verified">Verified</span>
         </div>
       </div>
       <div class="hcard-footer">
-        <div class="hcf-stat"><div class="hcf-num">24</div><div class="hcf-label">This week</div></div>
-        <div class="hcf-stat"><div class="hcf-num">98%</div><div class="hcf-label">Contact rate</div></div>
-        <div class="hcf-stat"><div class="hcf-num">$0</div><div class="hcf-label">Upfront</div></div>
+        <div class="hcf-stat"><div class="hcf-num">12</div><div class="hcf-label">This week</div></div>
+        <div class="hcf-stat"><div class="hcf-num">85%</div><div class="hcf-label">Contact rate</div></div>
+        <div class="hcf-stat"><div class="hcf-num">24h</div><div class="hcf-label">First lead</div></div>
       </div>
     </div>
   </div>
@@ -630,10 +646,10 @@ footer {
 
 <!-- STATS -->
 <div class="stats-section">
-  <div class="stat-item"><div class="stat-num">500<span>+</span></div><div class="stat-label">Leads delivered monthly</div></div>
-  <div class="stat-item"><div class="stat-num">12<span>+</span></div><div class="stat-label">Service categories covered</div></div>
-  <div class="stat-item"><div class="stat-num">98<span>%</span></div><div class="stat-label">Lead contact rate</div></div>
-  <div class="stat-item"><div class="stat-num">$<span>0</span></div><div class="stat-label">Upfront cost to start</div></div>
+  <div class="stat-item"><div class="stat-num">120<span>+</span></div><div class="stat-label">Leads delivered monthly</div></div>
+  <div class="stat-item"><div class="stat-num">6<span>+</span></div><div class="stat-label">Service categories covered</div></div>
+  <div class="stat-item"><div class="stat-num">85<span>%</span></div><div class="stat-label">Lead contact rate</div></div>
+  <div class="stat-item"><div class="stat-num"><span>0</span></div><div class="stat-label">Long-term contracts</div></div>
 </div>
 
 <!-- SERVICES -->
@@ -659,7 +675,7 @@ footer {
     <div class="why-grid">
       <div>
         <div class="section-eyebrow">Why Vertex</div>
-        <div class="section-heading">Not Just Leads —<br>The Right Leads</div>
+        <div class="section-heading">Quality Over<br>Volume</div>
         <div class="section-sub">We don't blast you with junk contacts. Every lead is a real homeowner, in your area, with a real job.</div>
         <div class="why-list">
           <div class="why-item">
@@ -682,16 +698,16 @@ footer {
       </div>
       <div class="why-visual">
         <div class="wv-title">Lead quality breakdown — this month</div>
-        <div class="wv-bar-row"><div class="wv-bar-label">Roofing</div><div class="wv-bar-wrap"><div class="wv-bar" style="width:92%"></div></div><div class="wv-bar-val">92%</div></div>
-        <div class="wv-bar-row"><div class="wv-bar-label">HVAC</div><div class="wv-bar-wrap"><div class="wv-bar" style="width:88%"></div></div><div class="wv-bar-val">88%</div></div>
-        <div class="wv-bar-row"><div class="wv-bar-label">Cleaning</div><div class="wv-bar-wrap"><div class="wv-bar" style="width:95%"></div></div><div class="wv-bar-val">95%</div></div>
-        <div class="wv-bar-row"><div class="wv-bar-label">Plumbing</div><div class="wv-bar-wrap"><div class="wv-bar" style="width:84%"></div></div><div class="wv-bar-val">84%</div></div>
-        <div class="wv-bar-row"><div class="wv-bar-label">Electrical</div><div class="wv-bar-wrap"><div class="wv-bar" style="width:87%"></div></div><div class="wv-bar-val">87%</div></div>
+        <div class="wv-bar-row"><div class="wv-bar-label">Roofing</div><div class="wv-bar-wrap"><div class="wv-bar" style="width:83%"></div></div><div class="wv-bar-val">83%</div></div>
+        <div class="wv-bar-row"><div class="wv-bar-label">HVAC</div><div class="wv-bar-wrap"><div class="wv-bar" style="width:82%"></div></div><div class="wv-bar-val">82%</div></div>
+        <div class="wv-bar-row"><div class="wv-bar-label">Cleaning</div><div class="wv-bar-wrap"><div class="wv-bar" style="width:89%"></div></div><div class="wv-bar-val">89%</div></div>
+        <div class="wv-bar-row"><div class="wv-bar-label">Plumbing</div><div class="wv-bar-wrap"><div class="wv-bar" style="width:79%"></div></div><div class="wv-bar-val">79%</div></div>
+        <div class="wv-bar-row"><div class="wv-bar-label">Electrical</div><div class="wv-bar-wrap"><div class="wv-bar" style="width:83%"></div></div><div class="wv-bar-val">83%</div></div>
         <div class="wv-divider"></div>
         <div class="wv-bottom">
-          <div class="wv-stat"><div class="wv-stat-num">98%</div><div class="wv-stat-label">Avg contact rate</div></div>
+          <div class="wv-stat"><div class="wv-stat-num">85%</div><div class="wv-stat-label">Avg contact rate</div></div>
           <div class="wv-stat"><div class="wv-stat-num">3–5</div><div class="wv-stat-label">Days to first lead</div></div>
-          <div class="wv-stat"><div class="wv-stat-num">100%</div><div class="wv-stat-label">Replacement rate</div></div>
+          <div class="wv-stat"><div class="wv-stat-num">100%</div><div class="wv-stat-label">Bad leads replaced</div></div>
         </div>
       </div>
     </div>
@@ -737,7 +753,7 @@ footer {
   <div class="industries-section">
     <div class="section-eyebrow">Coverage</div>
     <div class="section-heading">Every Major Home Service</div>
-    <div class="section-sub">We generate leads across all major home service categories — wherever you are in the US.</div>
+    <div class="section-sub">We cover all major home service verticals across the United States.</div>
     <div class="ind-grid">
       <div class="ind-card"><div class="ind-icon"><i data-lucide="home" style="width:18px;height:18px;stroke:rgba(255,255,255,0.7);fill:none;stroke-width:1.8"></i></div><div><div class="ind-name">Roofing</div><div class="ind-rate">$80–$150 / lead</div></div></div>
       <div class="ind-card"><div class="ind-icon"><i data-lucide="sparkles" style="width:18px;height:18px;stroke:rgba(255,255,255,0.7);fill:none;stroke-width:1.8"></i></div><div><div class="ind-name">Cleaning Services</div><div class="ind-rate">$25–$60 / lead</div></div></div>
@@ -759,15 +775,15 @@ footer {
       <div class="plan">
         <div class="plan-tier">Starter</div>
         <div class="plan-price"><sup>$</sup>500<sub>/mo</sub></div>
-        <div class="plan-tagline">Perfect for solo contractors getting started in one city with one service.</div>
+        <div class="plan-tagline">For solo contractors testing a new city or service. Shared leads at an accessible price point.</div>
         <ul class="plan-features">
-          <li><span class="ck">✓</span> Up to 15 verified leads/month</li>
+          <li><span class="ck">✓</span> 6–10 screened leads/month</li>
           <li><span class="ck">✓</span> 1 service category</li>
-          <li><span class="ck">✓</span> 1 city or zip code area</li>
-          <li><span class="ck">✓</span> Lead delivery via text & email</li>
-          <li><span class="ck">✓</span> Weekly performance report</li>
+          <li><span class="ck">✓</span> 1 city target area</li>
+          <li><span class="ck">✓</span> Delivered via text & email</li>
+          <li><span class="ck">✓</span> Monthly performance summary</li>
           <li class="off"><span class="ck">✗</span> Exclusive leads</li>
-          <li class="off"><span class="ck">✗</span> CRM integration</li>
+          <li class="off"><span class="ck">✗</span> Dedicated account manager</li>
         </ul>
         <button class="plan-btn bordered" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started →</button>
       </div>
@@ -775,30 +791,30 @@ footer {
         <div class="pop-tag">Most Popular</div>
         <div class="plan-tier">Growth</div>
         <div class="plan-price"><sup>$</sup>1,200<sub>/mo</sub></div>
-        <div class="plan-tagline">For contractors ready to scale with a consistent flow of exclusive, high-quality leads.</div>
+        <div class="plan-tagline">For contractors who want a reliable, exclusive pipeline without sharing leads with competitors.</div>
         <ul class="plan-features">
-          <li><span class="ck">✓</span> Up to 40 verified leads/month</li>
+          <li><span class="ck">✓</span> 15–25 exclusive leads/month</li>
           <li><span class="ck">✓</span> 2 service categories</li>
-          <li><span class="ck">✓</span> Up to 3 zip code areas</li>
-          <li><span class="ck">✓</span> 100% exclusive leads</li>
-          <li><span class="ck">✓</span> CRM integration</li>
-          <li><span class="ck">✓</span> Bi-weekly strategy call</li>
+          <li><span class="ck">✓</span> Up to 2 target cities</li>
+          <li><span class="ck">✓</span> 100% exclusive — not shared</li>
+          <li><span class="ck">✓</span> Monthly strategy call</li>
           <li><span class="ck">✓</span> Lead replacement guarantee</li>
+          <li><span class="ck">✓</span> Priority delivery</li>
         </ul>
         <button class="plan-btn dark" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started →</button>
       </div>
       <div class="plan">
         <div class="plan-tier">Pro</div>
         <div class="plan-price"><sup>$</sup>2,200<sub>/mo</sub></div>
-        <div class="plan-tagline">For established companies that want their entire pipeline managed hands-off.</div>
+        <div class="plan-tagline">For established contractors who want a fully managed, high-volume pipeline across multiple areas.</div>
         <ul class="plan-features">
-          <li><span class="ck">✓</span> Unlimited leads per month</li>
-          <li><span class="ck">✓</span> All service categories</li>
-          <li><span class="ck">✓</span> Entire metro area coverage</li>
-          <li><span class="ck">✓</span> Priority exclusive leads</li>
+          <li><span class="ck">✓</span> 35–50 exclusive leads/month</li>
+          <li><span class="ck">✓</span> Up to 3 service categories</li>
+          <li><span class="ck">✓</span> Up to 4 target cities</li>
+          <li><span class="ck">✓</span> Priority exclusive delivery</li>
           <li><span class="ck">✓</span> Dedicated account manager</li>
-          <li><span class="ck">✓</span> Weekly strategy call</li>
-          <li><span class="ck">✓</span> Custom landing pages</li>
+          <li><span class="ck">✓</span> Bi-weekly strategy call</li>
+          <li><span class="ck">✓</span> Lead replacement guarantee</li>
         </ul>
         <button class="plan-btn bordered" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started →</button>
       </div>
@@ -822,23 +838,23 @@ footer {
     <div class="testi-grid">
       <div class="testi-card">
         <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">"Before Vertex, I was chasing leads on Angi and wasting money every month. Now I get 8–12 qualified calls a week and my crew is booked 3 weeks out."</div>
-        <div class="testi-author"><div class="testi-avatar">MK</div><div><div class="testi-name">Mike K.</div><div class="testi-biz">Roofing Contractor — Dallas, TX</div></div></div>
+        <div class="testi-text">"I was spending way too much time cold calling and got nowhere. Vertex sent me 4 solid roofing leads in my first two weeks — two of them turned into paying jobs. Worth it."</div>
+        <div class="testi-author"><div class="testi-avatar">MC</div><div><div class="testi-name">Marcus Cole &nbsp;·&nbsp; <span style="font-weight:400;color:var(--dim)">Peak Roofing Co.</span></div><div class="testi-biz">Owner, Roofing Contractor — Dallas, TX</div></div></div>
       </div>
       <div class="testi-card">
         <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">"Vertex brought me 3 recurring commercial cleaning contracts in the first month. Best investment I made for my business this year by far."</div>
-        <div class="testi-author"><div class="testi-avatar">SR</div><div><div class="testi-name">Sandra R.</div><div class="testi-biz">Cleaning Company — Phoenix, AZ</div></div></div>
+        <div class="testi-text">"Signed up for the Starter plan just to test it out. Got 7 leads in the first month, closed 2 recurring cleaning contracts. Upgraded to Growth the next month."</div>
+        <div class="testi-author"><div class="testi-avatar">SB</div><div><div class="testi-name">Sandra Brooks &nbsp;·&nbsp; <span style="font-weight:400;color:var(--dim)">Bright Space Cleaning</span></div><div class="testi-biz">Owner, Cleaning Company — Phoenix, AZ</div></div></div>
       </div>
       <div class="testi-card">
         <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">"I was skeptical at first but the leads were real — people who actually answered their phones. Closed a $14,000 roof replacement in week two."</div>
-        <div class="testi-author"><div class="testi-avatar">JT</div><div><div class="testi-name">James T.</div><div class="testi-biz">Roofing & Gutters — Atlanta, GA</div></div></div>
+        <div class="testi-text">"Honestly was not expecting much — tried a few other lead services that were junk. These leads actually pick up the phone. Closed one job that more than paid for the whole month."</div>
+        <div class="testi-author"><div class="testi-avatar">JW</div><div><div class="testi-name">Jason Walsh &nbsp;·&nbsp; <span style="font-weight:400;color:var(--dim)">Tri-State Roofing</span></div><div class="testi-biz">Co-Owner, Roofing & Gutters — Atlanta, GA</div></div></div>
       </div>
       <div class="testi-card">
         <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">"Vertex keeps my HVAC team busy even in the slow season. Consistent, reliable, and the replacement guarantee is real — they replaced 2 bad leads same day."</div>
-        <div class="testi-author"><div class="testi-avatar">RL</div><div><div class="testi-name">Robert L.</div><div class="testi-biz">HVAC Company — Houston, TX</div></div></div>
+        <div class="testi-text">"Had one lead with a wrong number — emailed them and got a replacement the next morning. That kind of follow-through is rare. The leads themselves have been solid for HVAC."</div>
+        <div class="testi-author"><div class="testi-avatar">RL</div><div><div class="testi-name">Ryan Lewis &nbsp;·&nbsp; <span style="font-weight:400;color:var(--dim)">CoolAir Solutions</span></div><div class="testi-biz">Owner, HVAC Company — Houston, TX</div></div></div>
       </div>
     </div>
   </div>
@@ -873,7 +889,7 @@ footer {
       </div>
       <div class="faq-item">
         <div class="faq-q">Is there any setup fee or upfront cost? <span class="faq-icon">+</span></div>
-        <div class="faq-a">Zero upfront cost. You pay your first monthly retainer only after onboarding is complete and your first leads are ready to go.</div>
+        <div class="faq-a">Zero upfront cost. Your first month starts after onboarding is complete. We only begin billing once your campaign is live and leads are flowing.</div>
       </div>
     </div>
   </div>
@@ -885,7 +901,7 @@ footer {
     <div class="contact-left">
       <div class="section-eyebrow">Get Started</div>
       <div class="section-heading">Ready to Fill<br>Your Calendar?</div>
-      <p>Tell us your service and city — we'll send you a free estimate of how many leads are available in your area within 24 hours.</p>
+      <p>Fill out the form and we'll send you a free estimate of available leads in your area. No commitment required.</p>
       <div class="contact-checks">
         <div class="contact-check"><div class="check-icon">✓</div>No contracts — cancel anytime</div>
         <div class="contact-check"><div class="check-icon">✓</div>First response within 24 hours</div>
